@@ -1881,6 +1881,7 @@ extension_trait! {
         where
             Self: Sized + 'a,
             B: FromStream<Self::Item>,
+            Self::Item: Send,
         {
             FromStream::from_stream(self)
         }
