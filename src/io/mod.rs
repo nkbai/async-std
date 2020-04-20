@@ -271,7 +271,7 @@
 
 const DEFAULT_BUF_SIZE: usize = 8 * 1024;
 
-cfg_std! {
+// cfg_std! {
     #[doc(inline)]
     pub use std::io::{Error, ErrorKind, IoSlice, IoSliceMut, Result, SeekFrom};
 
@@ -302,9 +302,9 @@ cfg_std! {
     mod empty;
     mod repeat;
     mod sink;
-}
+// }
 
-cfg_default! {
+// cfg_default! {
     // For use in the print macros.
     #[doc(hidden)]
     pub use stdio::{_eprint, _print};
@@ -319,10 +319,10 @@ cfg_default! {
     mod stdin;
     mod stdio;
     mod stdout;
-}
+// }
 
-cfg_unstable_default! {
+// cfg_unstable_default! {
     pub use stderr::StderrLock;
     pub use stdin::StdinLock;
     pub use stdout::StdoutLock;
-}
+// }

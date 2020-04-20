@@ -1,4 +1,4 @@
-cfg_unstable! {
+// cfg_unstable! {
     mod delay;
     mod flatten;
     mod race;
@@ -14,11 +14,11 @@ cfg_unstable! {
     use try_race::TryRace;
     use join::Join;
     use try_join::TryJoin;
-}
+// }
 
-cfg_unstable_default! {
+// cfg_unstable_default! {
     use crate::future::timeout::TimeoutFuture;
-}
+// }
 
 extension_trait! {
     use core::pin::Pin;

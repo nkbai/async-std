@@ -46,12 +46,12 @@
 //! [`Future::race`]: trait.Future.html#method.race
 //! [`Future::try_race`]: trait.Future.html#method.try_race
 
-cfg_alloc! {
+// cfg_alloc! {
     pub use future::Future;
     pub(crate) mod future;
-}
+// }
 
-cfg_std! {
+// cfg_std! {
     pub use pending::pending;
     pub use poll_fn::poll_fn;
     pub use ready::ready;
@@ -59,16 +59,16 @@ cfg_std! {
     mod pending;
     mod poll_fn;
     mod ready;
-}
+// }
 
-cfg_default! {
+// cfg_default! {
     pub use timeout::{timeout, TimeoutError};
     mod timeout;
-}
+// }
 
-cfg_unstable! {
+// cfg_unstable! {
     pub use into_future::IntoFuture;
     pub(crate) use maybe_done::MaybeDone;
     mod into_future;
     mod maybe_done;
-}
+// }

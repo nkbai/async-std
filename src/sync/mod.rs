@@ -182,7 +182,7 @@ pub use rwlock::{RwLock, RwLockReadGuard, RwLockWriteGuard};
 mod mutex;
 mod rwlock;
 
-cfg_unstable! {
+// cfg_unstable! {
     pub use barrier::{Barrier, BarrierWaitResult};
     pub use channel::{channel, Sender, Receiver, RecvError, TryRecvError, TrySendError};
     pub use condvar::Condvar;
@@ -190,12 +190,12 @@ cfg_unstable! {
     mod barrier;
     mod condvar;
     mod channel;
-}
+// }
 
 pub(crate) mod waker_set;
 pub(crate) use waker_set::WakerSet;
 
-cfg_default! {
+// cfg_default! {
     pub(crate) mod spin_lock;
     pub(crate) use spin_lock::Spinlock;
-}
+// }

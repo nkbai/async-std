@@ -117,20 +117,20 @@
 //! [`task_local!`]: ../macro.task_local.html
 //! [`with`]: struct.LocalKey.html#method.with
 
-cfg_alloc! {
+// cfg_alloc! {
     #[doc(inline)]
     pub use core::task::{Context, Poll, Waker};
     pub use ready::ready;
 
     mod ready;
-}
+// }
 
-cfg_std! {
+// cfg_std! {
     pub use yield_now::yield_now;
     mod yield_now;
-}
+// }
 
-cfg_default! {
+// cfg_default! {
     pub use block_on::block_on;
     pub use builder::Builder;
     pub use current::current;
@@ -159,4 +159,4 @@ cfg_default! {
     pub use spawn_blocking::spawn_blocking;
     #[cfg(not(any(feature = "unstable", test)))]
     pub(crate) use spawn_blocking::spawn_blocking;
-}
+// }

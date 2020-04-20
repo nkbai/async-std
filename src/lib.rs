@@ -253,27 +253,27 @@ pub use async_attributes::{main, test};
 #[cfg(feature = "std")]
 mod macros;
 
-cfg_alloc! {
+// cfg_alloc! {
     pub mod task;
     pub mod future;
     pub mod stream;
-}
+// }
 
-cfg_std! {
+// cfg_std! {
     pub mod io;
     pub mod os;
     pub mod prelude;
     pub mod sync;
-}
+// }
 
-cfg_default! {
+// cfg_default! {
     pub mod fs;
     pub mod path;
     pub mod net;
     pub(crate) mod rt;
-}
+// }
 
-cfg_unstable! {
+// cfg_unstable! {
     pub mod pin;
     pub mod process;
 
@@ -283,7 +283,7 @@ cfg_unstable! {
     mod option;
     mod string;
     mod collections;
-}
+// }
 
 cfg_unstable_default! {
     #[doc(inline)]
